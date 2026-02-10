@@ -1,0 +1,30 @@
+GFC Financial Chatbot Prototype — Test Results
+
+Environment:
+- Python: 3.11.9
+- Data file: GFC_10K_Financial_Data_3_Years.csv
+
+Test 1 — Single company, specific year (metric lookup)
+User: What was Apple revenue in 2024?
+Expected: Returns Apple FY2024 revenue (USD mn) (+ YoY only if asked)
+Observed: PASS
+
+Test 2 — YoY change logic
+User: How did Tesla net income change in 2024?
+Expected: Returns Tesla FY2024 net income and YoY direction/%
+Observed: PASS
+
+Test 3 — Cash flow query
+User: What is Microsoft CFO in 2024?
+Expected: Returns Microsoft FY2024 CFO (USD mn)
+Observed: PASS
+
+Test 4 — Compare across companies
+User: Compare Apple and Microsoft revenue in 2024
+Expected: Returns both companies’ FY2024 revenue
+Observed: PASS
+
+Test 5 — Graceful handling (unsupported / ambiguous)
+User: Tell me about valuation multiples
+Expected: Bot asks for supported metric or company guidance
+Observed: PASS
